@@ -1,0 +1,156 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background: #35424a;
+    color: #ffffff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Display if you have a mobile menu */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo img {
+    height: 50px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-middle {
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 20px; /* Increased space between links */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px; /* Increased font size */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e8491d; /* Highlight color on hover */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background: url("New folder/cater3.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the main content */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Header styling */
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 90px; /* Increased height */
+    border-bottom: #e8491d 3px solid;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px; /* Increased font size */
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Section styling */
+section {
+    padding: 30px; /* Increased padding */
+    margin: 20px 0;
+    background: #ffffff; /* Background is white */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+}
+
+section h2 {
+    color: #35424a;
+    font-size: 32px; /* Increased font size */
+    animation: slideIn 2s ease-out;
+}
+
+section p {
+    font-size: 18px; /* Increased font size */
+    line-height: 1.8;
+    color: #333333;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
