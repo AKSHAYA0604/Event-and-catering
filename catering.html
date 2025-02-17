@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Options</title>
+    <link rel="stylesheet" href="catering.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="nav-left">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="New folder/logo.jpg" alt="Event Essence Logo">
+                </a>
+            </div>
+            <div class="nav-middle">
+                <ul class="nav-links">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="eventall.html">Event Halls</a></li>
+                    <li><a href="catering.html">Catering Service</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="aboutus.html">More About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback Form</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="selection-container">
+            <h2>Select City</h2>
+            <div class="city-selection">
+                <select id="city" onchange="showCateringOptions()">
+                    <option disabled selected>Select City</option>
+                    <option value="kukatpally">Kukatpally</option>
+                    <option value="ameerpet">Ameerpet</option>
+                    <option value="banjarahills">Banjara Hills</option>
+                    <option value="secunderabad">Secunderabad</option>
+                    <option value="nagole">Nagole</option>
+                    <option value="hitechcity">Hitech City</option>
+                    <option value="narsingi">Narsingi</option>
+                    <option value="gachibowli">Gachibowli</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="caterings-container">
+            <div id="caterings-list"></div>
+        </section>
+    </div>
+
+    <div id="catering-details" class="catering-details">
+        <button class="close-btn" onclick="closeDetails()">×</button>
+        <div id="catering-info"></div>
+    </div>
+
+    <script src="catering.js"></script>
+</body>
+</html>
