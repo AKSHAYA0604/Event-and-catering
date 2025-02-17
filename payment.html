@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        /* Navigation Bar Styles */
+.navbar {
+    background: #35424a;
+    color: #ffffff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Display if you have a mobile menu */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo img {
+    height: 70px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-middle {
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e74c3c;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+    </style>
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+        <div class="navbar-container">
+            <div class="nav-left">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="New folder/logo.jpg" alt="Event Essence Logo">
+                </a>
+            </div>
+            <div class="nav-middle">
+                <ul class="nav-links">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="eventall.html">Event Halls</a></li>
+                    <li><a href="catering.html">Catering Service</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="aboutus.html">More About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback Form</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Payment</h1>
+    <div id="paymentContainer">
+        <!-- Payment will be handled here by Razorpay -->
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>
