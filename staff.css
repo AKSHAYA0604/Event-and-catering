@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fallback color */
+    background-image: url('New folder/func.jpg'); /* Add background image */
+    background-size: cover; /* Adjust to cover the entire body */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background: #35424a;
+    color: #ffffff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Display if you have a mobile menu */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo img {
+    height: 70px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-middle {
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e74c3c;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.service-container {
+    margin-bottom: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex; /* Align the image and description side by side */
+    align-items: left; /* Vertically center the content */
+}
+
+.service-header {
+    flex: 0 0 auto; /* Prevent image from resizing */
+    display: flex;
+    justify-content: left; /* Center-align the image horizontally within its container */
+    align-items: left; /* Center-align the image vertically within its container */
+    margin-right: 20px; /* Space between image and description */
+}
+
+.service-header img {
+    width: 160px; /* Size of the image */
+    height: 160px;
+    border-radius: 50%;
+}
+
+.service-details {
+    flex: 1; /* Allow the description to take up remaining space */
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column; /* Stack the name and description vertically */
+    justify-content: left; /* Center-align items vertically */
+    text-align: left;
+}
+
+.service-details h2 {
+    margin-top: 0; /* Remove default margin-top for the title */
+    margin-bottom: 10px; /* Space between title and description */
+}
+
+.service-card p {
+    color: #0d0c0c;
+    margin: 0; /* Remove default margin */
+    line-height: 1.5;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
