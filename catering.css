@@ -1,0 +1,293 @@
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('New folder/cater1.jpg') no-repeat center center fixed,
+                url('New folder/cater2.jpg') no-repeat center center fixed; /* Multiple background images */
+    background-size: cover, cover;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background: #35424a;
+    color: #ffffff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Display if you have a mobile menu */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo img {
+    height: 70px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-middle {
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Container Styles */
+.container {
+    background-color: #ffffff; /* White Background for Box */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Selection Box Styles */
+.selection-container {
+    background-color: #ffffff; /* White Background for Selection Box */
+    border: 1px solid #00796b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #00796b; /* Darker Aqua for Text */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Select Box Styles */
+select {
+    display: block;
+    margin: 0 auto;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #00796b;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #004d40; /* Dark Aqua for Focus */
+    outline: none;
+}
+
+/* Catering Box Styles */
+.caterings-container {
+    background-color: #ffffff; /* White Background for Caterings Box */
+    border: 1px solid #00796b;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#caterings-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Catering Item Styles */
+.catering-item {
+    background: #ffffff;
+    border: 1px solid #00796b;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.catering-item h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #004d40; /* Dark Aqua for Headings */
+}
+
+.catering-item p {
+    color: #004d40; /* Dark Aqua for Text */
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.catering-item button {
+    background-color: #00bcd4; /* Aqua Blue */
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.catering-item button:hover {
+    background-color: #00838f; /* Darker Aqua for Hover */
+}
+
+/* Catering Details Modal */
+.catering-details {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+    animation: fadeIn 0.5s ease-out;
+}
+.caterer-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caterer-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.caterer-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.caterer-details h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.caterer-details p {
+    margin: 5px 0;
+}
+
+
+.catering-details div {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff1744; /* Bright Red */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #d50032; /* Darker Red for Hover */
+}
+
+.catering-details h2 {
+    margin-top: 0;
+    color: #004d40; /* Dark Aqua for Headings */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
