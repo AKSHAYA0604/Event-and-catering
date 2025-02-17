@@ -1,0 +1,218 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    background: url('New folder/main.jpg') no-repeat center center fixed; /* Background image for the entire page */
+    background-size: cover; /* Ensure the background image covers the entire page */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background: #35424a;
+    color: #ffffff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Display if you have a mobile menu */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo img {
+    height: 50px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-middle {
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; /* Adjust based on the height of the navbar */
+    padding: 20px;
+    width: 100%;
+}
+
+/* Section Styles */
+.section {
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* Make section background slightly transparent */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Typography */
+.section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Grid Container for Event Halls */
+.halls-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Hall Card Styles */
+.hall-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures content, including the image, stays within the container */
+}
+
+.hall-card img {
+    width: 100%;
+    height: 300px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensures the entire image is visible, maintaining aspect ratio */
+    border-radius: 8px; /* Keeps the rounded corners */
+    background-color: #f9f9f9; /* Adds a background color to fill any gaps */
+}
+
+.hall-card:hover {
+    transform: scale(1.05); /* Scales up the card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adds shadow for the pop effect */
+}
+
+/* Chat Box Styles */
+.popup-chat {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    flex-direction: column;
+    display: flex;
+}
+
+.popup-chat .header {
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+}
+
+.popup-chat .body {
+    padding: 10px;
+}
+
+.popup-chat .body textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.popup-chat .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.popup-chat .footer .btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+.popup-chat .footer .btn:first-child {
+    margin-left: 0;
+}
+
+.popup-chat .footer .btn:last-child {
+    margin-right: 0;
+}
