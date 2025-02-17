@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Background Image and Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: url("New folder/func.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            background: rgba(0, 0, 0, 0.9); /* Darker shade */
+            color: #ffffff;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none; /* Display if you have a mobile menu */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo img {
+            height: 70px; /* Adjust size as needed */
+            margin-right: 10px; /* Space between logo and text */
+        }
+
+        .nav-middle {
+            flex: 1;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4; /* Aqua Blue */
+        }
+
+        /* Main Heading */
+        h2 {
+            color: #ffffff; /* White */
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Feedback Section Styling */
+        .feedback-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Space between columns */
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px 0;
+        }
+
+        .feedback-section, form {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            flex: 1;
+        }
+
+        .feedback-section h3 {
+            margin-bottom: 15px;
+            color: #00796b; /* Darker Aqua Blue */
+            font-size: 1.5em;
+        }
+
+        .feedback {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .feedback:last-child {
+            border-bottom: none;
+        }
+
+        .feedback p {
+            margin-bottom: 5px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #00796b; /* Darker Aqua Blue */
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 2px solid #00796b; /* Darker Aqua Blue */
+            border-radius: 4px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #004d40; /* Even darker Aqua Blue */
+            outline: none;
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #00bcd4; /* Aqua Blue */
+        }
+
+        button {
+            background-color: #00bcd4; /* Aqua Blue */
+            color: #ffffff; /* White */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00796b; /* Darker Aqua Blue */
+            transform: scale(1.05);
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="nav-left">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="New folder/logo.jpg" alt="Event Essence Logo">
+                </a>
+            </div>
+            <div class="nav-middle">
+                <ul class="nav-links">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="eventall.html">Event Halls</a></li>
+                    <li><a href="catering.html">Catering Service</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="aboutus.html">More About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback Form</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Feedback Page</h2>
+    
+    <!-- Feedback Section and Form Side by Side -->
+    <div class="feedback-container">
+        <!-- Pre-filled Feedbacks Section -->
+        <div class="feedback-section">
+            <h3>User Feedbacks</h3>
+            <div class="feedback">
+                <p><strong>John Doe:</strong> Great experience! The service was excellent, and I highly recommend it.</p>
+                <p>Rating: ★★★★★</p>
+            </div>
+            <div class="feedback">
+                <p><strong>Jane Smith:</strong> I loved how easy it was to navigate the site and find what I needed. Very user-friendly!</p>
+                <p>Rating: ★★★★☆</p>
+            </div>
+            <div class="feedback">
+                <p><strong>Michael Brown:</strong> Excellent customer support. Quick response and very helpful.</p>
+                <p>Rating: ★★★★★</p>
+            </div>
+        </div>
+
+        <!-- Feedback Form -->
+        <form action="submit-feedback.html" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Star Rating Section -->
+            <label for="rating">Rate Us:</label>
+            <div class="star-rating">
+                <input type="radio" id="5-stars" name="rating" value="5">
+                <label for="5-stars" class="star">&#9733;</label>
+                <input type="radio" id="4-stars" name="rating" value="4">
+                <label for="4-stars" class="star">&#9733;</label>
+                <input type="radio" id="3-stars" name="rating" value="3">
+                <label for="3-stars" class="star">&#9733;</label>
+                <input type="radio" id="2-stars" name="rating" value="2">
+                <label for="2-stars" class="star">&#9733;</label>
+                <input type="radio" id="1-star" name="rating" value="1">
+                <label for="1-star" class="star">&#9733;</label>
+            </div>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="5" required></textarea>
+            
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>
