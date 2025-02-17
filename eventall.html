@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Hall and Catering Booking</title>
+    <link rel="stylesheet" href="eventhall.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="nav-left">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="New folder/logo.jpg" alt="Event Essence Logo">
+                </a>
+            </div>
+            <div class="nav-middle">
+                <ul class="nav-links">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="eventall.html">Event Halls</a></li>
+                    <li><a href="catering.html">Catering Service</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="aboutus.html">More About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback Form</a></li>
+                </ul>
+            </div>
+    </nav>
+
+
+    <div class="container">
+        <!-- Event Type Section -->
+        <section id="eventTypeSelection" class="section">
+            <h2>Select Event Type</h2>
+            <select id="eventHallType" onchange="showCitySelection()">
+                <option disabled selected>Select Event Type</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Convention">Convention</option>
+                <option value="Birthday party">Birthday party</option>
+                <option value="Saree function">Saree function</option>
+                <option value="Dhoti function">Dhoti function</option>
+                <option value="Seminar">Seminar</option>
+                <option value="Annual/Convocation/Farewell">Annual/Convocation/Farewell</option>
+            </select>
+        </section>
+
+        <!-- City Selection Section -->
+        <section id="citySelection" class="section" style="display: none;">
+            <h2>Select City</h2>
+            <select id="city" onchange="searchHalls()">
+                <option disabled selected>Select City</option>
+                <option value="kukatpally">Kukatpally</option>
+                <option value="ameerpet">Ameerpet</option>
+                <option value="banjarahills">Banjara Hills</option>
+                <option value="secunderabad">Secunderabad</option>
+                <option value="nagole">Nagole</option>
+                <option value="hitechcity">Hitech City</option>
+                <option value="narsingi">Narsingi</option>
+                <option value="gachibowli">Gachibowli</option>
+                <option value="attapur">Attapur</option>
+                <option value="kphb">KPHB</option>
+            </select>
+            <button class="btn" onclick="searchHalls()">Search</button>
+        </section>
+
+        <!-- Event Halls Section -->
+        <section id="eventHalls" class="section" style="display: none;">
+            <h1>Select Event Hall</h1>
+            <div id="hallsContainer" class="halls-container"></div>
+            <button class="btn" onclick="goBackToCitySelection()">Go Back</button>
+        </section>
+        
+        <!-- Hall Details Section -->
+        <section id="hallDetails" class="section" style="display: none;">
+            <h1 id="hallName"></h1>
+            <div id="hallMainImage" class="main-image"></div>
+            <div id="hallImages" class="thumbnails"></div>
+            <p id="hallDescription"></p>
+            <div id="hallReviews" class="reviews"></div>
+            <h2>Do you need catering?</h2>
+            <button class="btn" onclick="addToCart()">Add to Cart</button>
+            <button class="btn" onclick="showCateringOptions()">Yes</button>
+            <button class="btn" onclick="redirectToCart()">No</button>
+            <button class="btn" onclick="goBackToHalls()">Go Back</button>
+        </section>
+
+        <!-- Catering Options Section --> 
+        <section id="cateringOptions" class="section" style="display: none;"> 
+            <h1>Select Catering Option</h1> 
+            <div id="cateringContainer" class="halls-container"></div> 
+            <button class="btn" onclick="addToCartAndRedirect()">Confirm Booking</button> 
+            <a href="catering.html" class="btn">Catering</a>
+            <button class="btn" onclick="goBack()">Go Back</button> 
+        </section> 
+
+        <!-- Chat Box -->
+        <div id="chatBox" class="popup-chat" style="display:none;">
+            <div class="header">Chat with Us</div>
+            <div class="body">
+                <textarea id="chatMessage" placeholder="Type your message here..."></textarea>
+            </div>
+            <div class="footer">
+                <button class="btn" onclick="sendMessage()">Send</button>
+                <button class="btn" onclick="closeChat()">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="eventhall.js"></script>
+</body>
+</html>
