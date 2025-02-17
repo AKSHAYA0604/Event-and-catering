@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Essence - Event Booking & Catering Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* Navigation Bar Styles */
+.navbar {
+    background: #35424a;
+    color: #ffffff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Display if you have a mobile menu */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logo img {
+    height: 70px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-middle {
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e74c3c;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.sign-in {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    background: #e74c3c;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.sign-in:hover {
+    background: #c0392b;
+}
+
+/* Remove the background image from the body */
+body {
+    background: none; /* or remove the entire background property */
+}
+/* Apply the background image to the specific section */
+.hero-section {
+    background-image: url('New folder/catmain.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fffffff3; /* Ensures text is visible over the background */
+    height: 100vh; /* Adjust this to make sure the whole image is visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.about-section {
+    padding: 20px;
+    background-color: #fff;
+    color: #000; /* Text color for readability */
+    margin-top: 0; /* Ensures it appears right after the hero section */
+}
+        .hero-button {
+            padding: 10px 20px;
+            background-color: #ff5a5f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .hero-section h1 {
+    color: #000; /* Set the heading color to black */
+}
+.hero-section p {
+    color: #000; /* Set the paragraph color to black */
+    font-weight: bold;
+}
+        /* Image and Description Section */
+        .image-description-section {
+    display: flex;
+    align-items: center;
+    padding: 40px; /* Increased padding for more space around content */
+    gap: 40px; /* Increased gap for better separation between image and text */
+    background-color: #f9f9f9; /* Subtle background color to make content stand out */
+}
+.image-container {
+    flex: 1;
+}
+.image-container img {
+    max-width: 100%;
+    max-width: none; /* Remove max-width constraint */
+    height: auto;
+    border-radius: 15px; /* Slightly larger border radius for a smoother look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+.description-container {
+    flex: 1;
+    max-width: 700px; /* Increased max width for text */
+}
+.description-container h2 {
+    font-size: 2.5rem; /* Larger font size for headings */
+    font-weight: 700; /* Bolder font weight for emphasis */
+    margin-bottom: 20px; /* Space below heading */
+    color: #333; /* Darker color for better readability */
+}
+.description-container p {
+    font-size: 1.25rem; /* Increased font size for body text */
+    line-height: 1.8; /* Increased line height for better readability */
+    color: #555; /* Slightly darker color for text */
+}
+.image-description-section {
+    font-size: 2.5rem; /* Ensure the text size is roughly equal to the image size */
+}
+.image-container img {
+    height: 25vw; /* Adjust height to make image large */
+    object-fit: cover; /* Ensure the image covers the container */
+}
+.description-container {
+    font-size: 2.5rem; /* Match the font size to the image height */
+}
+        /* Services Section */
+        .services-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #f7f7f7;
+        }
+        .service {
+            text-align: center;
+            max-width: 300px;
+        }
+        .service i {
+            font-size: 2rem;
+            color: #ff5a5f;
+        }
+        .service h2 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .service p {
+            font-size: 1rem;
+        }
+
+        /* Function Halls Section */
+        .halls-section {
+            padding: 20px;
+        }
+        .halls-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f4f4f4;
+        }
+        .hall-card {
+            flex: 0 0 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .hall-card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            height: 200px;
+        }
+        .hall-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .hall-card p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Catering Section */
+        .catering-section {
+            padding: 20px;
+        }
+        .catering-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f4f4f4;
+        }
+        .catering-card {
+            flex: 0 0 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .catering-card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            height: 200px;
+        }
+        .catering-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .catering-card p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+         /* Event Management Section */
+         .event-management-section {
+            padding: 20px;
+        }
+        .event-management-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f4f4f4;
+        }
+        .event-management-card {
+            flex: 0 0 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .event-management-card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            height: 200px;
+        }
+        .event-management-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .event-management-card p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-section h4 {
+            margin-bottom: 10px;
+        }
+        .footer-section form {
+            display: flex;
+        }
+        .footer-section input {
+            flex: 1;
+            padding: 5px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        .footer-section .subscribe-button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #ff5a5f;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+        }
+        .social-links {
+            display: flex;
+            gap: 10px;
+            align-items: center; 
+        }
+        .social-links .icon {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer-bottom ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .footer-bottom ul li {
+            display: inline;
+        }
+        .footer-bottom ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="nav-left">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="index.html" class="logo">
+                    <img src="New folder/logo.jpg" alt="Event Essence Logo">
+                </a>
+            </div>
+            <div class="nav-middle">
+                <ul class="nav-links">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="eventall.html">Event Halls</a></li>
+                    <li><a href="catering.html">Catering Service</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="aboutus.html">More About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback Form</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="signin.html" class="sign-in">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-container">
+            <h1>Welcome to Event Essence</h1>
+            <p>Find the perfect venue and catering service for your next event.</p>
+            <a href="eventhalls.html" class="hero-button">Explore Event Halls</a>
+        </div>
+    </header>
+
+    <!-- Image and Description Section -->
+    <section class="image-description-section">
+        <div class="image-container">
+            <img src="New folder/func.jpg" alt="Event Essence Image" />
+        </div>
+        <div class="description-container">
+          <h2>About Event Essence</h2>
+          <p>
+              Event Essence is your premier destination for seamless event planning. From venue selection to catering services, we ensure every detail of your event is perfect. Whether it's a grand wedding, corporate event, or an intimate gathering, our expert team will bring your vision to life with elegance and professionalism.
+          </p>
+      </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+      <div class="service">
+          <i class="fas fa-calendar-alt"></i>
+          <h2>Event Calendar</h2>
+          <p>Manage your events with ease using our interactive calendar.</p>
+      </div>
+      <div class="service">
+          <i class="fas fa-utensils"></i>
+          <h2>Catering Services</h2>
+          <p>Choose from the best catering services for your event.</p>
+      </div>
+      <div class="service">
+          <i class="fas fa-hotel"></i>
+          <h2>Luxurious Venues</h2>
+          <p>Book the most beautiful event venues in the city.</p>
+      </div>
+  </section>
+
+  <!-- Function Halls Section -->
+  <section class="halls-section">
+    <h2>Function Halls</h2>
+    <div class="halls-container">
+        <!-- Secunderabad Halls -->
+        <div class="hall-card">
+            <img src="New folder/images5.jpg" alt="Majestic Hall">
+            <h3>Majestic Hall</h3>
+            <p>Located in Secunderabad, Majestic Hall offers a grand setting for weddings and corporate events.</p>
+        </div>
+        <div class="hall-card">
+            <img src="New folder/images.jpg" alt="Imperial Banquet">
+            <h3>Imperial Banquet</h3>
+            <p>Imperial Banquet in Secunderabad provides an elegant venue for intimate gatherings and celebrations.</p>
+        </div>
+
+        <!-- Hitech City Halls -->
+        <div class="hall-card">
+            <img src="New folder/images1.jpg" alt="Hitech Convention Center">
+            <h3>Hitech Convention Center</h3>
+            <p>Situated in Hitech City, this center is perfect for large conferences and upscale events.</p>
+        </div>
+        <div class="hall-card">
+            <img src="New folder/download1.jpg" alt="Hitech Banquet Hall">
+            <h3>Hitech Banquet Hall</h3>
+            <p>Hitech Banquet Hall offers a modern setting in Hitech City, ideal for both weddings and corporate functions.</p>
+        </div>
+
+        <!-- Narsingi Halls -->
+        <div class="hall-card">
+            <img src="New folder/download.jpg" alt="Narsingi Grand Hall">
+            <h3>Narsingi Grand Hall</h3>
+            <p>Located in Narsingi, this grand hall is perfect for large events with a touch of elegance.</p>
+        </div>
+        <div class="hall-card">
+            <img src="New folder/images3.jpg" alt="Narsingi Banquet Hall">
+            <h3>Narsingi Banquet Hall</h3>
+            <p>Narsingi Banquet Hall offers a versatile space for various events in the heart of Narsingi.</p>
+        </div>
+
+        <!-- Gachibowli Halls -->
+        <div class="hall-card">
+            <img src="New folder/images2.jpg" alt="Gachibowli Event Center">
+            <h3>Gachibowli Event Center</h3>
+            <p>This event center in Gachibowli is designed for large gatherings and modern celebrations.</p>
+        </div>
+        <div class="hall-card">
+            <img src="New folder/images4.jpg" alt="Gachibowli Banquet Hall">
+            <h3>Gachibowli Banquet Hall</h3>
+            <p>Gachibowli Banquet Hall provides a sophisticated venue for weddings and special events.</p>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Catering Section -->
+  <section class="catering-section">
+      <h2>Catering Services</h2>
+      <div class="catering-container">
+          <!-- Example Catering Cards -->
+          <div class="catering-card">
+              <img src="New folder/cater1.jpg" alt="Catering Service 1">
+              <h3>Gourmet Delights</h3>
+              <p>Specializing in exquisite menus for all types of events.</p>
+          </div>
+          <div class="catering-card">
+              <img src="New folder/cater3.jpg" alt="Catering Service 2">
+              <h3>Elegant Eats</h3>
+              <p>High-end catering with a focus on elegant presentations.</p>
+          </div>
+          <div class="catering-card">
+              <img src="New folder/cater4.jpg" alt="Catering Service 3">
+              <h3>Delicious Catering</h3>
+              <p>Offering a wide variety of delicious dishes for any occasion.</p>
+          </div>
+          <div class="catering-card">
+              <img src="New folder/cater2.jpg" alt="Catering Service 4">
+              <h3>Feast For All</h3>
+              <p>Customizable menus to suit every taste and preference.</p>
+          </div>
+      </div>
+  </section>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .top-section {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+    .top-section img {
+        width: 50%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .blissful-escapes {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .blissful-escapes h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    .blissful-escapes strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .blissful-escapes p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    .bottom-section {
+        display: flex;
+        gap: 40px;
+    }
+    .inclusions {
+        width: 50%;
+    }
+    .inclusions h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .inclusions ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    .inclusions ul li {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .bottom-section img {
+        width: 45%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-section">
+        <img src="New folder/main.jpg" alt="Event Image"> <!-- Replace with your image -->
+        <div class="blissful-escapes">
+            <h2>Blissful Escapes</h2>
+            <strong>INR 2000 hotel credit per room per stay</strong>
+            <p>
+                Immerse yourself in a blissful escape and unwind amidst idyllic settings. Soak in the magnificence of luxury 
+                with the best rate guarantee that comes with a host of complimentary services and the promise of the legendary 
+                hospitality.
+            </p>
+        </div>
+    </div>
+    
+    <div class="bottom-section">
+        <div class="inclusions">
+            <h3>Inclusions</h3>
+            <ul>
+                <li>Buffet breakfast</li>
+                <li>INR 2000 hotel credit per room per stay</li>
+                <li>1+1 On select beverages per stay</li>
+                <li>Complimentary room upgrade during your next stay</li>
+                <li>INR 1000 spa credit per stay </li>
+                <li>15% Savings on food and soft beverage</li>
+            </ul>
+        </div>
+        <img src="New folder/home.jpg" alt="Luxury Service"> <!-- Replace with your image -->
+    </div>
+</div>
+</body>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-section">
+              <h4>About Us</h4>
+              <p>Event Essence is dedicated to providing exceptional event planning services to ensure your event is unforgettable. Learn more about our team and what we offer.</p>
+          </div>
+          <div class="footer-section">
+              <h4>Contact Us</h4>
+              <p>Email: info@eventessence.com</p>
+              <p>Phone: (123) 456-7890</p>
+              <p>Address: 123 Event Street, City, Country</p>
+          </div>
+          <div class="footer-section">
+              <h4>Subscribe</h4>
+              <form>
+                  <input type="email" placeholder="Your Email" />
+                  <button type="submit" class="subscribe-button">Subscribe</button>
+              </form>
+          </div>
+          <div class="footer-section">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                  <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+          </ul>
+          <p>&copy; 2024 Event Essence. All rights reserved.</p>
+      </div>
+  </footer>
+</body>
+</html>
+
